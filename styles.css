@@ -1,0 +1,146 @@
+body {
+    font-family: Outfit, sans-serif; /* Establece la fuente del documento */
+    margin: 0; /* Elimina el margen predeterminado del navegador */
+    background-color: #ffffff; /* Color de fondo del cuerpo */
+}
+
+h1 {
+    font-size: 2.25rem; /* Tamaño de fuente para el encabezado h1 */
+    font-weight: 500; /* Peso de la fuente */
+}
+
+#descripcion {
+    max-width: 100%; /* Ancho máximo del elemento */
+    width: 80%; /* Ancho del elemento (80% del contenedor padre) */
+}
+
+#otro {
+    font-size: 1rem; /* Tamaño de fuente para el texto de 'otro' */
+    font-weight: 500; /* Peso de la fuente */
+    color: #3662E3; /* Color del texto */
+}
+
+#Contenedor {
+    display: grid; /* Utiliza un sistema de rejilla para el diseño */
+    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas de igual tamaño */
+    grid-template-rows: repeat(2, 300px); /* Dos filas de 300px de altura */
+    gap: 0; /* Sin espacios entre los elementos de la rejilla */
+    width: calc(100% - 150px); /* Ancho del contenedor, considerando los márgenes */
+    margin: 75px auto; /* Margen superior e inferior de 75px, centrado horizontalmente */
+    background-color: #F3F4F6; /* Color de fondo del contenedor */
+    background-image: url("Background_decor.svg"); /* Imagen de fondo */
+    border-radius: 20px; /* Bordes redondeados del contenedor */
+}
+
+#Titulo {
+    grid-column: span 2; /* Ocupa las columnas 1 y 2 */
+    grid-row: 1; /* Ubicación en la fila 1 */
+    padding-top: 20px; /* Espacio superior */
+    padding-left: 20px; /* Espacio izquierdo */
+}
+
+/* Contenedores individuales para cada persona */
+#Liam, #Sophia, #Ethan, #Isabella, #Noah {
+    position: relative; /* Permite posicionar elementos hijos absolutamente */
+    display: flex; /* Utiliza flexbox para alinear elementos internos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: flex-end; /* Alinea los elementos al borde inferior */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+}
+
+/* Estilo de la imagen principal (persona) */
+.avatar {
+    z-index: 1; /* Asegura que la imagen esté debajo del texto pero encima del fondo */
+    max-width: 100%; /* Ajusta el tamaño según sea necesario */
+    width: 500px; /* Ancho específico para la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* Estilo de la imagen del gradiente */
+.sombra {
+    position: absolute; /* Permite que la imagen se posicione absolutamente dentro del contenedor */
+    bottom: 0; /* Posiciona la imagen en la parte inferior */
+    left: 0; /* Posiciona la imagen a la izquierda */
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+    z-index: 2; /* Coloca el gradiente detrás de la imagen principal y del texto */
+    pointer-events: none; /* Evita que la imagen interfiera con la interacción del usuario */
+}
+
+/* Estilos para las etiquetas de nombre y trabajo */
+.name, .job {
+    position: absolute; /* Permite posicionar los textos de nombre y trabajo de forma absoluta */
+    color: white; /* Color del texto */
+    z-index: 3; /* Asegura que estén por encima del gradiente */
+    background-color: transparent; /* Fondo transparente */
+    left: 25px; /* Espacio a la izquierda */
+}
+
+.name {
+    bottom: 25px; /* Margen desde el fondo para la etiqueta de nombre */
+    font-size: 1.25rem; /* Tamaño de fuente para el nombre */
+    font-weight: 600; /* Peso de la fuente para el nombre */
+}
+
+.job {
+    bottom: 5px; /* Margen desde el fondo para la etiqueta de trabajo */
+    font-size: 1rem; /* Tamaño de fuente para el trabajo */
+    font-weight: 400; /* Peso de la fuente para el trabajo */
+}
+
+/* Estilos específicos para cada div individual */
+#Liam {
+    grid-column: 3; /* Columna 3 */
+    grid-row: 1; /* Fila 1 */
+    background-color: #C1B6F8; /* Color de fondo */
+}
+
+#Sophia {
+    grid-column: 4; /* Columna 4 */
+    grid-row: 1; /* Fila 1 */
+    background-color: #EDACD2; /* Color de fondo */
+    border-top-right-radius: 20px; /* Bordes redondeados en la esquina superior derecha */
+}
+
+#Resto {
+    grid-column: 1; /* Columna 1 */
+    grid-row: 2; /* Fila 2 */
+    position: relative; /* Permite posicionamiento absoluto de los hijos */
+    padding: 12px; /* Espaciado interno */
+    height: 100%; /* Ocupa todo el espacio disponible */
+}
+
+#Resto p {
+    margin: 0; /* Sin margen para el párrafo */
+    position: absolute; /* Permite posicionar el texto */
+    bottom: 50px; /* Posiciona el texto desde el fondo */
+    left: 20px; /* Alinear a la izquierda */
+}
+
+#Resto img {
+    margin-left: 8px; /* Margen izquierdo para separar la imagen del texto */
+    height: 20px; /* Ajusta la altura según sea necesario */
+    position: absolute; /* Permite posicionar la imagen */
+    bottom: 50px; /* Posiciona la imagen desde el fondo */
+    left: 125px; /* Ajusta la posición de la imagen, asegurando que esté al lado del texto */
+}
+
+#Ethan {
+    grid-column: 2; /* Columna 2 */
+    grid-row: 2; /* Fila 2 */
+    background-color: #9DC4F8; /* Color de fondo */
+}
+
+#Isabella {
+    grid-column: 3; /* Columna 3 */
+    grid-row: 2; /* Fila 2 */
+    background-color: #F8D8B0; /* Color de fondo */
+}
+
+#Noah {
+    grid-column: 4; /* Columna 4 */
+    grid-row: 2; /* Fila 2 */
+    background-color: #86E7D4; /* Color de fondo */
+    border-bottom-right-radius: 20px; /* Bordes redondeados en la esquina inferior derecha */
+}
